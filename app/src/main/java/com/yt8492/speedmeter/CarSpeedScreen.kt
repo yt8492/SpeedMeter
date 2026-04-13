@@ -3,6 +3,7 @@ package com.yt8492.speedmeter
 import androidx.car.app.CarContext
 import androidx.car.app.Screen
 import androidx.car.app.model.Action
+import androidx.car.app.model.Header
 import androidx.car.app.model.Pane
 import androidx.car.app.model.PaneTemplate
 import androidx.car.app.model.Row
@@ -21,8 +22,11 @@ class CarSpeedScreen(
     val pane = Pane.Builder()
       .addRow(row)
       .build()
+    val header = Header.Builder()
+      .setStartHeaderAction(Action.APP_ICON)
+      .build()
     return PaneTemplate.Builder(pane)
-      .setHeaderAction(Action.APP_ICON)
+      .setHeader(header)
       .build()
   }
 
